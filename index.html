@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Açaí Em Casa - O Melhor da Cidade</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <img src="/acailogo.svg" alt="Açaí Em Casa Logo" />
+      <h1>Açaí Em Casa</h1>
+      <p>"O Melhor da Cidade – Entregamos!"</p>
+    </header>
+
+    <div class="container">
+      <!-- Tigelas -->
+      <section class="section">
+        <h2 class="section-title">Tigelas</h2>
+        <div class="products-grid">
+          <!-- Tigela 300ml -->
+          <div class="product-card">
+            <img src="/tigela.svg" alt="Tigela de 300ml" />
+            <h3>Tigela de 300ml</h3>
+            <div class="price">R$ 15,00</div>
+            <p class="complements-info">4 complementos</p>
+            <button class="select-btn" data-product-id="tigela300" onclick="selectProduct('tigela300')">
+              Selecionar
+            </button>
+          </div>
+
+          <!-- Tigela 400ml -->
+          <div class="product-card">
+            <img src="/tigela.svg" alt="Tigela de 400ml" />
+            <h3>Tigela de 400ml</h3>
+            <div class="price">R$ 19,00</div>
+            <p class="complements-info">4 complementos</p>
+            <button class="select-btn" data-product-id="tigela400" onclick="selectProduct('tigela400')">
+              Selecionar
+            </button>
+          </div>
+
+          <!-- Tigela 700ml -->
+          <div class="product-card">
+            <img src="/tigela.svg" alt="Tigela de 700ml" />
+            <h3>Tigela de 700ml</h3>
+            <div class="price">R$ 35,00</div>
+            <p class="complements-info">7 complementos</p>
+            <button class="select-btn" data-product-id="tigela700" onclick="selectProduct('tigela700')">
+              Selecionar
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Copos -->
+      <section class="section">
+        <h2 class="section-title">Copos</h2>
+        <div class="products-grid">
+          <!-- Copo 250ml -->
+          <div class="product-card">
+            <img src="/copo.svg" alt="Copo de 250ml" />
+            <h3>Copo de 250ml</h3>
+            <div class="price">R$ 12,00</div>
+            <p class="complements-info">4 complementos</p>
+            <button class="select-btn" data-product-id="copo250" onclick="selectProduct('copo250')">
+              Selecionar
+            </button>
+          </div>
+
+          <!-- Copo 300ml -->
+          <div class="product-card">
+            <img src="/copo.svg" alt="Copo de 300ml" />
+            <h3>Copo de 300ml</h3>
+            <div class="price">R$ 14,00</div>
+            <p class="complements-info">4 complementos</p>
+            <button class="select-btn" data-product-id="copo300" onclick="selectProduct('copo300')">
+              Selecionar
+            </button>
+          </div>
+
+          <!-- Copo 400ml -->
+          <div class="product-card">
+            <img src="/copo.svg" alt="Copo de 400ml" />
+            <h3>Copo de 400ml</h3>
+            <div class="price">R$ 18,00</div>
+            <p class="complements-info">4 complementos</p>
+            <button class="select-btn" data-product-id="copo400" onclick="selectProduct('copo400')">
+              Selecionar
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Barcas -->
+      <section class="section">
+        <h2 class="section-title">Barcas</h2>
+        <div class="products-grid">
+          <!-- Barca Pequena -->
+          <div class="product-card">
+            <img src="/barca.svg" alt="Barca Pequena" />
+            <h3>Barca Pequena</h3>
+            <div class="price">R$ 35,00</div>
+            <button class="select-btn" data-product-id="barcaP" onclick="selectProduct('barcaP')">
+              Selecionar
+            </button>
+          </div>
+
+          <!-- Barca Grande -->
+          <div class="product-card">
+            <img src="/barca.svg" alt="Barca Grande" />
+            <h3>Barca Grande</h3>
+            <div class="price">R$ 65,00</div>
+            <button class="select-btn" data-product-id="barcaG" onclick="selectProduct('barcaG')">
+              Selecionar
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Complementos (inicialmente escondido) -->
+      <section class="complements-section" id="complements-section" style="display: none;">
+        <h3>Escolha seus complementos</h3>
+        <div id="complement-limit-info"></div>
+
+        <!-- Complementos Grátis -->
+        <div class="complement-category">
+          <h4>Complementos Grátis</h4>
+          <div class="complements-grid">
+            <div class="complement-item">
+              <input type="checkbox" id="leite_po" data-complement-id="leite_po" data-price="0" onchange="toggleComplement('leite_po', this.checked)" />
+              <label for="leite_po">Leite em pó</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="castanha" data-complement-id="castanha" data-price="0" onchange="toggleComplement('castanha', this.checked)" />
+              <label for="castanha">Castanha</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="amendoim" data-complement-id="amendoim" data-price="0" onchange="toggleComplement('amendoim', this.checked)" />
+              <label for="amendoim">Amendoim</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="granola" data-complement-id="granola" data-price="0" onchange="toggleComplement('granola', this.checked)" />
+              <label for="granola">Granola</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="sucrilhos" data-complement-id="sucrilhos" data-price="0" onchange="toggleComplement('sucrilhos', this.checked)" />
+              <label for="sucrilhos">Sucrilhos</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="tapioca" data-complement-id="tapioca" data-price="0" onchange="toggleComplement('tapioca', this.checked)" />
+              <label for="tapioca">Tapioca</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="pacoca" data-complement-id="pacoca" data-price="0" onchange="toggleComplement('pacoca', this.checked)" />
+              <label for="pacoca">Paçoca</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="cereja" data-complement-id="cereja" data-price="0" onchange="toggleComplement('cereja', this.checked)" />
+              <label for="cereja">Cereja</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="choco_power" data-complement-id="choco_power" data-price="0" onchange="toggleComplement('choco_power', this.checked)" />
+              <label for="choco_power">Choco Power</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="flocos_arroz" data-complement-id="flocos_arroz" data-price="0" onchange="toggleComplement('flocos_arroz', this.checked)" />
+              <label for="flocos_arroz">Flocos de arroz</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="marshmallow" data-complement-id="marshmallow" data-price="0" onchange="toggleComplement('marshmallow', this.checked)" />
+              <label for="marshmallow">Marshmallow</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="jujuba" data-complement-id="jujuba" data-price="0" onchange="toggleComplement('jujuba', this.checked)" />
+              <label for="jujuba">Jujuba</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="mm" data-complement-id="mm" data-price="0" onchange="toggleComplement('mm', this.checked)" />
+              <label for="mm">M&M</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="bolacha" data-complement-id="bolacha" data-price="0" onchange="toggleComplement('bolacha', this.checked)" />
+              <label for="bolacha">Bolacha</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="bolacha_trit" data-complement-id="bolacha_trit" data-price="0" onchange="toggleComplement('bolacha_trit', this.checked)" />
+              <label for="bolacha_trit">Bolacha (triturado)</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="bolacha_triunfo" data-complement-id="bolacha_triunfo" data-price="0" onchange="toggleComplement('bolacha_triunfo', this.checked)" />
+              <label for="bolacha_triunfo">Bolacha (Triunfo)</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="chocolate_trit" data-complement-id="chocolate_trit" data-price="0" onchange="toggleComplement('chocolate_trit', this.checked)" />
+              <label for="chocolate_trit">Chocolate (triturado)</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="granulado" data-complement-id="granulado" data-price="0" onchange="toggleComplement('granulado', this.checked)" />
+              <label for="granulado">Granulado</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frutas -->
+        <div class="complement-category">
+          <h4>Frutas</h4>
+          <div class="complements-grid">
+            <div class="complement-item">
+              <input type="checkbox" id="banana" data-complement-id="banana" data-price="0" onchange="toggleComplement('banana', this.checked)" />
+              <label for="banana">Banana</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="uva" data-complement-id="uva" data-price="0" onchange="toggleComplement('uva', this.checked)" />
+              <label for="uva">Uva</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coberturas -->
+        <div class="complement-category">
+          <h4>Coberturas</h4>
+          <div class="complements-grid">
+            <div class="complement-item">
+              <input type="checkbox" id="cob_chocolate" data-complement-id="cob_chocolate" data-price="0" onchange="toggleComplement('cob_chocolate', this.checked)" />
+              <label for="cob_chocolate">Chocolate</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="cob_morango" data-complement-id="cob_morango" data-price="0" onchange="toggleComplement('cob_morango', this.checked)" />
+              <label for="cob_morango">Morango</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="cob_caramelo" data-complement-id="cob_caramelo" data-price="0" onchange="toggleComplement('cob_caramelo', this.checked)" />
+              <label for="cob_caramelo">Caramelo</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="cob_uva" data-complement-id="cob_uva" data-price="0" onchange="toggleComplement('cob_uva', this.checked)" />
+              <label for="cob_uva">Uva</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="cob_abacaxi" data-complement-id="cob_abacaxi" data-price="0" onchange="toggleComplement('cob_abacaxi', this.checked)" />
+              <label for="cob_abacaxi">Abacaxi</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="leite_condensado" data-complement-id="leite_condensado" data-price="0" onchange="toggleComplement('leite_condensado', this.checked)" />
+              <label for="leite_condensado">Leite condensado</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="cob_kiwi" data-complement-id="cob_kiwi" data-price="0" onchange="toggleComplement('cob_kiwi', this.checked)" />
+              <label for="cob_kiwi">Kiwi</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Adicionais Pagos -->
+        <div class="complement-category">
+          <h4>Adicionais Pagos (R$ 2,00 cada)</h4>
+          <div class="complements-grid">
+            <div class="complement-item">
+              <input type="checkbox" id="nutella" data-complement-id="nutella" data-price="2" onchange="toggleComplement('nutella', this.checked)" />
+              <label for="nutella">Nutella</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="doce_leite" data-complement-id="doce_leite" data-price="2" onchange="toggleComplement('doce_leite', this.checked)" />
+              <label for="doce_leite">Doce de leite</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="kiwi" data-complement-id="kiwi" data-price="2" onchange="toggleComplement('kiwi', this.checked)" />
+              <label for="kiwi">Kiwi</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cremes -->
+        <div class="complement-category">
+          <h4>Cremes (R$ 2,00 cada)</h4>
+          <div class="complements-grid">
+            <div class="complement-item">
+              <input type="checkbox" id="creme_ninho" data-complement-id="creme_ninho" data-price="2" onchange="toggleComplement('creme_ninho', this.checked)" />
+              <label for="creme_ninho">Ninho</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="creme_bacuri" data-complement-id="creme_bacuri" data-price="2" onchange="toggleComplement('creme_bacuri', this.checked)" />
+              <label for="creme_bacuri">Bacuri</label>
+            </div>
+            <div class="complement-item">
+              <input type="checkbox" id="creme_maracuja" data-complement-id="creme_maracuja" data-price="2" onchange="toggleComplement('creme_maracuja', this.checked)" />
+              <label for="creme_maracuja">Maracujá</label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Entrega -->
+      <section class="delivery-section">
+        <h3>Opções de Entrega</h3>
+        <div class="delivery-option">
+          <input type="checkbox" id="delivery-checkbox" onchange="updateTotal()" />
+          <label for="delivery-checkbox">Incluir taxa de entrega (R$ 2,00)</label>
+        </div>
+      </section>
+
+      <!-- Resumo do Pedido -->
+      <section class="summary-section">
+        <div class="total-price">
+          Total: <span id="total-price">R$ 0,00</span>
+        </div>
+        <button class="confirm-btn" id="confirm-btn" disabled onclick="confirmOrder()">
+          Confirmar Pedido
+        </button>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Nossa Senhora dos Remédios – PI</p>
+      <p>Instagram: @ACAIEMCASA_NSR</p>
+    </footer>
+
+    <!-- Scripts simples no final do body -->
+    <script src="/src/simple-script.js"></script>
+  </body>
+</html>
